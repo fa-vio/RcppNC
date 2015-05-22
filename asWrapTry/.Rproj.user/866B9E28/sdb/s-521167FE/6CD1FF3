@@ -1,0 +1,16 @@
+{
+    "contents" : "\n#include <cstdio>\n#include <string>\n#include <iostream>\n\n#include \"SamData.hpp\"\n\n#include <RcppCommon.h>\n#include \"samdataRcppWrapperDecl.h\"\n#include <Rcpp.h>\n#include \"samdataRcppWrapperDef.h\"\n\nusing namespace Rcpp;\n\n\n// [[Rcpp::plugins(cpp11)]]\n\n// [[Rcpp::export]]\nList rcpp_hello_world() {\n\n    CharacterVector x = CharacterVector::create( \"foo\", \"bar\" )  ;\n    NumericVector y   = NumericVector::create( 0.0, 1.0 ) ;\n    List z            = List::create( x, y ) ;\n\n    return z ;\n}\n\n// [[Rcpp::export]]\nSEXP try_wrap_samdata() {\n    SamData sd;\n    sd.setId(189);\n    sd.setChr1(\"Fabio\");\n    sd.setChr2(\"oibaF\");\n    \n    return Rcpp::wrap(sd);\n}\n\n// [[Rcpp::export]]\nlong samId(SEXP s) {\n    SamData d = Rcpp::as<SamData>(s);\n    long id = d.getId();\n    return id;\n}",
+    "created" : 1432286796951.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2428235986",
+    "id" : "6CD1FF3",
+    "lastKnownWriteTime" : 1432301499,
+    "path" : "~/asWrapTry/src/rcpp_hello_world.cpp",
+    "project_path" : "src/rcpp_hello_world.cpp",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "cpp"
+}
