@@ -1,0 +1,16 @@
+{
+    "contents" : "# combine with standard arguments for R\nPKG_CPPFLAGS = -I.\nPKG_LIBS = `$(R_HOME)/bin/Rscript -e \"Rcpp:::LdFlags()\"`\nCXX_STD = CXX11",
+    "created" : 1432205802155.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "846593066",
+    "id" : "90065FCA",
+    "lastKnownWriteTime" : 1432205893,
+    "path" : "~/RcppNC.git/trunk/tryClass/src/Makevars",
+    "project_path" : "src/Makevars",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "text"
+}

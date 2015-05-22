@@ -1,0 +1,16 @@
+{
+    "contents" : "\n#include <Rcpp.h>\n\n#include \"SamData.hpp\"\nusing namespace Rcpp;\n\n// [[Rcpp::plugins(cpp11)]]\n\n// [[Rcpp::export]]\nList rcpp_hello_world() {\n\n    CharacterVector x = CharacterVector::create( \"foo\", \"bar\" )  ;\n    NumericVector y   = NumericVector::create( 0.0, 1.0 ) ;\n    List z            = List::create( x, y ) ;\n\n    return z ;\n}\n\n\n// [[Rcpp::export]]\nSEXP try_wrap_samdata() {\n    SamData d;\n    d.setId(18);\n    return Rcpp::wrap(d);\n}\n\n// [[Rcpp::export]]\nlong samId(SEXP s) {\n    SamData d = Rcpp::as<SamData>(s);\n    long id = d.getId();\n    \n    return id;\n}\n",
+    "created" : 1432201883548.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4128859784",
+    "id" : "53EE4D9",
+    "lastKnownWriteTime" : 1432247282,
+    "path" : "~/RcppNC.git/trunk/tryClass/src/rcpp_hello_world.cpp",
+    "project_path" : "src/rcpp_hello_world.cpp",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "cpp"
+}
